@@ -5,10 +5,21 @@ import { HttpModule } from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { VideoCenterComponent } from './components/video-center/video-center.component';
+import { VideoListComponent } from './components/video-list/video-list.component';
+import { VideoDetailComponent } from './components/video-detail/video-detail.component';
+import {VideoService} from "./services/video.service";
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    VideoCenterComponent,
+    VideoListComponent,
+    VideoDetailComponent,
+    SafePipe
   ],
   imports: [
     BrowserModule,
@@ -16,7 +27,7 @@ import { AppComponent } from './app.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [VideoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
